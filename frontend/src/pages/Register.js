@@ -7,7 +7,7 @@ const Register = () => {
  const [role, setRole] = useState('customer');
  const handleSubmit = (e) => {
    e.preventDefault();
-   axios.post('http://localhost:3000/api/users/register', { name, email, password, role })
+   axios.post('http://localhost:5000/api/users/register', { name, email, password, role })
      .then(response => {
        // Redirect to login page
      })

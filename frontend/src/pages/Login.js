@@ -5,7 +5,7 @@ const Login = () => {
  const [password, setPassword] = useState('');
  const handleSubmit = (e) => {
    e.preventDefault();
-   axios.post('http://localhost:3000/api/users/login', { email, password })
+   axios.post('http://localhost:5000/api/users/login', { email, password })
      .then(response => {
        localStorage.setItem('token', response.data.token);
        // Redirect to home page or dashboard

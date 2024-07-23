@@ -6,9 +6,14 @@ const Home = () => {
  const [slots, setSlots] = useState([]);
  const [selectedSlot, setSelectedSlot] = useState(null);
  useEffect(() => {
-   axios.get('http://localhost:3000/api/slots')
-     .then(response => setSlots(response.data))
-     .catch(error => console.error('Error fetching slots:', error));
+   axios.get('http://localhost:5000/api/slots')
+     .then(response => {
+       console.log('Slots fetched:', response.data); // Add this line
+       setSlots(response.data);
+     })
+     .catch(error => {
+       console.error('Error fetching slots:', error);
+     });
  }, []);
  const handleBook = (slot) => {
    setSelectedSlot(slot);
